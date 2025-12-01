@@ -183,12 +183,6 @@ A key challenge: With 4,242 permits and ~6,160 DeSO areas, most DeSO areas (>99%
 - Handles zeros naturally, interprets as probability
 - Reference: King & Zeng (2001) for rare events data[^22]
 
-**Alternative specification 2: Count models**
-- Dependent variable: Number of permits per DeSO
-- Use Poisson or Negative Binomial regression (designed for count data)
-- Zero-inflated models if appropriate
-- Reference: Cameron & Trivedi (2013)[^23]
-
 **Sensitivity analysis: Urban subsample**
 - Focus on Stockholm, Gothenburg, Malmö regions where permit density is higher
 - Test whether results differ in urban vs. all-Sweden sample
