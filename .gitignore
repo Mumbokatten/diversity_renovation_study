@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Data files
+*.log
+
+# Analysis outputs - exclude PDFs but keep key PNG visualizations
+analysis/output/
+*.pdf
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Shapefiles (large binary files)
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.zip
