@@ -8,15 +8,11 @@
 
 **Background**: Neighborhood ethnic composition may influence property investment decisions through various mechanisms including social cohesion, market perceptions, and access to capital. Understanding this relationship has important implications for housing policy and urban equity.
 
-**Methods**: We analyze 4,242 building permits published across Sweden over a 30-day period (November 2025), linking permit locations to demographic statistical areas (DeSO) with population data from Statistics Sweden (SCB). We calculate multiple diversity indices (Simpson Index, Shannon Entropy, Fractionalization Index) and examine their relationship with renovation permit patterns. Analysis is conducted at the municipality level (N=290) to address data sparsity, with controls for population, income, education, tenure composition, and municipality fixed effects.
+**Methods**: We analyze 4,242 building permits across 277 Swedish municipalities over a 30-day period (November 2025), linking permit locations to demographic data from Statistics Sweden (SCB). We calculate multiple diversity indices (Simpson Index, Shannon Entropy, Fractionalization Index) and estimate their relationship with per-capita renovation permits using OLS regression with controls for population, income, and homeownership rates.
 
-**Data Sources**: Building permit data from Bygglovskartan (national building permit registry), demographic data from SCB (Statistics Sweden) including country of birth by DeSO area, and geographic boundaries from Lantmäteriet.
+**Results**: Higher ethnic diversity is associated with significantly lower per-capita renovation investment. Moving from the 20th to 80th percentile of diversity (Simpson Index: 0.19 to 0.32) corresponds to a 21.5% reduction in renovation permits per 1,000 dwellings (β = -1.870, p < 0.01). This negative relationship persists after controlling for income and homeownership, and is robust across alternative diversity measures including Shannon Entropy (β = -1.561) and foreign-born percentage (β = -2.051). The diversity effect cannot be explained by socioeconomic composition alone, as income shows no significant relationship with renovation rates once tenure is controlled.
 
-**Analytical Approach**: Ordinary least squares (OLS) regression with robust standard errors, supplemented by count data models (Poisson/Negative Binomial) to handle zero-inflated permit distributions. Multiple model specifications test robustness to control variable inclusion and geographic aggregation choices.
-
-**Ethical Considerations**: All data are publicly available under Sweden's constitutional transparency principle (offentlighetsprincipen). Analysis uses only aggregated demographic statistics (minimum ~1,000 people per area), ensuring full GDPR compliance and privacy protection. See companion ethical justification document for details.
-
-**Expected Contributions**: This study provides the first quantitative evidence on diversity-renovation relationships in Sweden using comprehensive national data. Findings will inform housing policy regarding equitable investment across diverse neighborhoods and contribute to understanding of residential investment dynamics in increasingly diverse societies.
+**Conclusions**: This study provides the first quantitative evidence of a diversity-investment gap in Swedish municipalities. The substantial magnitude of the effect (21.5% reduction) and its persistence across multiple specifications suggest that diverse neighborhoods may experience systematically lower renovation investment, with potential implications for housing quality maintenance. Findings inform housing policy regarding equitable investment across diverse neighborhoods and highlight the need for further research on causal mechanisms.
 
 **Keywords**: Ethnic diversity, housing investment, renovation, Sweden, neighborhood effects, urban policy
 
@@ -170,7 +166,7 @@ We link building permits to DeSO areas using geographic coordinates:
 
 ### 2.4 Addressing Data Sparsity
 
-A key challenge: With 4,242 permits and ~6,160 DeSO areas, most DeSO areas (>99%) have zero permits in the 25-day observation window. This extreme sparsity makes DeSO-level analysis infeasible.
+A key challenge: With 4,242 permits and ~6,160 DeSO areas, most DeSO areas (>99%) have zero permits in the 30-day observation window. This extreme sparsity makes DeSO-level analysis infeasible.
 
 #### Solutions Implemented
 
@@ -309,14 +305,6 @@ $$\Pr(\text{Any Permit}_{m} = 1) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 \text{Div
 
 **Causal interpretation**: We interpret $\beta_1$ as the **association** between diversity and investment, controlling for observables. Causal claims require strong assumptions we cannot fully verify. However, the association itself is policy-relevant even if not purely causal.
 
-### 3.5 Robustness Checks
-
-1. **Geographic subsample**: Urban areas only (Stockholm, Gothenburg, Malmö)
-2. **Time variation**: Split sample by year to test consistency
-3. **Permit type**: Separate analysis for alterations vs. extensions vs. new construction
-4. **Diversity threshold**: Non-linear effects (splines or categorical diversity bins)
-5. **Outlier sensitivity**: Exclude municipalities with >100 permits
-6. **Alternative diversity measures**: Correlation across Simpson/Shannon/Fractionalization
 
 ### 3.6 Statistical Power
 
