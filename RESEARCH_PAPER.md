@@ -306,7 +306,7 @@ $$\Pr(\text{Any Permit}_{m} = 1) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 \text{Div
 **Causal interpretation**: We interpret $\beta_1$ as the **association** between diversity and investment, controlling for observables. Causal claims require strong assumptions we cannot fully verify. However, the association itself is policy-relevant even if not purely causal.
 
 
-### 3.6 Statistical Power
+### 3.5 Statistical Power
 
 With N=290 municipalities and typical permit count variation, we have approximately 80% power to detect:
 - **Small effect**: Cohen's $f^2$ ≈ 0.03 (small)
